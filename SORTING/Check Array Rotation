@@ -1,0 +1,27 @@
+//////////////////////////////////////////////////////////////////////choose this one
+int arrayRotateCheck(int *input, int size)
+{
+    int left = 0;
+    int right = size - 1;
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        if (input[mid] > input[right])
+            left = mid + 1;
+        else
+            right = mid;
+    }
+    return left;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+int arrayRotateCheck(int *input,int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        if(input[i]>input[i+1])
+        {
+            return i+1;
+        }
+    }
+    return 0;
+}
